@@ -1,0 +1,137 @@
+@font-face{
+    font-family: 'irsans';
+    src: local(IRANSans),
+    url(../font/FontsFree-Net-ir_sans.ttf) format(true type);
+}
+:root{
+    --first-color:#9c6000;
+    --second-color:#ffe57b;
+}
+body{
+    color: #fff;
+    font-family: 'irsans';
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height:100vh;
+    background: url(./preview\ \(1\).webp) no-repeat fixed center ;
+    background-size: cover;
+}
+.header-text{
+    font-size:90px;
+    letter-spacing: 8px;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 190px;
+}
+.box{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .5); ;
+    background:rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    transition: all .1s ease-in;
+}
+.box:hover{
+    backdrop-filter: blur(.5px);
+    box-shadow: 0 0 10px var(--second-color);
+    border: 1px solid var(--second-color);
+}
+.addres-header{
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #5f5f5f;
+    color: #fff;
+}
+.address{
+    font-size: 28px;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom: 10px;
+    color: #feaa22;
+}
+.email,.phone-number{
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    transition: all .2s ease-in;
+}
+.line{
+    width:0px;
+    height: 3px;
+    background-color: var(--second-color);
+    border-radius: 20px;
+    transition: all .1s ease-in-out;
+    box-shadow: 0 0 1px var(--second-color);
+}
+.email:hover +.line{
+    width: 300px;
+}
+.phone-number:hover +.line{
+    width: 300px;
+}
+.social{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 0 auto;
+}
+.icon{
+    width: 80px;
+}
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    transition: all .1s ease-in;
+}
+.icon-container:nth-child(1):hover{
+    background-image:linear-gradient(135deg,blue,purple,red,orange,yellow);
+}
+.icon-container:nth-child(2):hover{
+    background-color: #03A9F4;
+}
+.icon-container:nth-child(3):hover{
+    background-color: #64DD17;
+}
+.icon-container:nth-child(4):hover{
+    background-color: #0D47A1;
+}
+@media screen and (max-width:510px){
+    .address,.email,.phone-number{
+        font-size: 25px;
+    }
+    .icon,.icon-container{
+        width: 60px;
+        height: 60px;
+    }
+    .box{
+        width: 95%;
+        height: auto;
+    }
+    .header-text{
+        line-height: 100px;
+    }
+}
